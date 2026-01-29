@@ -1,6 +1,6 @@
-# SURE: Shift-aware, User-adaptive, Risk-controlled rEcommendations
+# CARE: Adaptive Calibration for Reliable Recommendations
 
-SURE (Shift-aware, User-adaptive, Risk-controlled rEcommendations) is a framework for dynamically calibrating and aggregating predictions from multiple sequential recommender models, under user-level uncertainty constraints.
+CARE (CARE: Adaptive Calibration for Reliable Recommendations) is a framework for dynamically calibrating and aggregating predictions from multiple sequential recommender models, under user-level uncertainty constraints.
 
 ## 📁 Project Structure
 
@@ -11,7 +11,7 @@ SURE (Shift-aware, User-adaptive, Risk-controlled rEcommendations) is a framewor
 ├── outputs/             # Generated results
 ├── datasets/            # Raw evaluation files (input)
 ├── datasets_/           # Normalized evaluation files (output)
-├── sure.sh              # Shell script to run DUAR
+├── care.sh              # Shell script to run DUAR
 ├── main_.py             # Main driver to run DAUR
 ├── run_daur_.py         # Core DAUR logic
 ```
