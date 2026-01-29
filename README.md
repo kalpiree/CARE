@@ -1,8 +1,8 @@
 
 
-# SURE: Shift-aware, User-adaptive, Risk-controlled rEcommendations
+# CARE: Adaptive Calibration for Reliable Recommendations
 
-This repository implements a pipeline to generate prediction sets with guaranteed performance with the SURE framework.
+This repository implements a pipeline to generate prediction sets with guaranteed performance with the CARE framework.
 
 ---
 
@@ -42,17 +42,17 @@ Each CSV must contain:
 
 ---
 
-### 3. **SURE Calibration & Aggregation**
-Use SURE to calibrate models and adaptively ensemble them over time.
+### 3. **CARE Calibration & Aggregation**
+Use CARE to calibrate models and adaptively ensemble them over time.
 
 ####  Normalize Scores
 ```bash
 python data/loader.py --dataset sasrec --subdataset goodreads --output_root datasets_
 ```
 
-####  Run SURE
+####  Run CARE
 ```bash
-bash sure.sh
+bash CARE.sh
 ```
 
 Or manually:
@@ -76,17 +76,17 @@ python main_.py \
 
 ---
 
-##  SURE Components
+##  CARE Components
 
-- `main_.py`: Entry point for SURE. Runs lambda calibration + adaptive ensemble.
-- `run_sure_.py`: Implements the time-evolving risk-driven aggregation loop.
+- `main_.py`: Entry point for CARE. Runs lambda calibration + adaptive ensemble.
+- `run_CARE_.py`: Implements the time-evolving risk-driven aggregation loop.
 - `calibration/`: Core calibration logic:
   - `adaptive_loop.py`: Adaptive λ update based on segment-level risk
   - `aggregator_.py`: Model weighting and prediction set union
   - `lambda_search_.py`: Risk-controlled lambda search
   - `risk_estimator.py`: Empirical loss computation
   - `segment_shift.py`: Segment selection via concept/covariate shift
-- `data/loader.py`: Normalizes model outputs into SURE-ready format
+- `data/loader.py`: Normalizes model outputs into CARE-ready format
 
 ---
 
@@ -104,10 +104,10 @@ python main_.py \
 │   ├── segment_shift.py
 │   └── set_constructor_.py
 ├── main_.py
-├── run_sure_.py
-├── sure.sh
+├── run_CARE_.py
+├── CARE.sh
 ├── datasets_/           # Normalized model predictions
-└── outputs/             # SURE outputs
+└── outputs/             # CARE outputs
 ```
 
 ---
